@@ -1,0 +1,37 @@
+Commands: 
+Create a private repo on github using github’s GUI named “i-am-a-git-noob”.
+To create a local repo use: git init
+    Changes observed – git init command initiated a “.git” file which is hidden which will track all the changes in our local machine.
+To point this local repo to the remote repo we will use:
+     git remote add origin https://github.com/bq-shubham-43/i-am-a-git-noob.git and
+     git branch -M main
+To print the current configuration
+    git config –list
+    git config --list –show-origin (to see all levels of configuration)
+To set configurations: - 
+    git config user.name “Shubham Mishra”
+    git config user.email shubham.mishra@betaque.com
+To create a file: echo “first line in file” > test1.txt
+To push this file: 
+    git push -u origin main
+echo "second line in file" >> test1.txt
+git add .
+git status or git diff --cached
+echo "third line in file" >> test1.txt
+git reset test1.txt
+Creating commit: 
+    git add .
+    git commit -m “My first commit”
+Updating the commit:  git commit –amend
+git push –force
+git revert 382d9ba (commit hash id)
+git log --oneline
+echo "fourth line in file" >> test1.txt
+git add .
+git commit -m “added fourth line”
+git commit –amend --no-edit
+git push origin main 
+Pulling after changes: 
+git pull origin main
+Cloning Repo:
+git clone https://github.com/bq-shubham-43/i-am-a-git-noob.git
