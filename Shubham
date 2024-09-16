@@ -1,0 +1,43 @@
+1. Create SSH keys for all accounts
+
+     ssh-keygen -t rsa -C "my_office_email@gmail.com" -f "github-rahul-office"
+     ssh-keygen -t rsa -C "my_personal_email@gmail.com" -f "github-rahul-personal"
+
+2. Paste the public key on Github
+
+	Sign in to Github Account
+	Goto Settings > SSH and GPG keys > New SSH Key
+	Paste your copied public key and give it a Title of your choice.
+
+3. Create a Config File and Make Host Entries
+	touch config
+	open config
+
+     #rahul-office account
+     Host github.com-rahul-office
+          HostName github.com
+          User git
+          IdentityFile ~/.ssh/github-rahul-office
+
+     #rahul-personal account
+     Host github.com-rahul-personal
+          HostName github.com
+          User git
+          IdentityFile ~/.ssh/github-rahul-personal
+
+4. Cloning GitHub repositories using different accounts
+
+	git clone git@github.com-rahul-personal:rahul-personal/TestRepo.git
+	git clone git@github.com-rahul-office:rahul-office/TestRepo.git
+
+5. we will have to configure user.email and user.name in every repository freshly cloned or existing before.
+	
+     git config user.email "my_office_email@gmail.com"
+     git config user.name "Rahul Pandey"
+     
+     git config user.email "my-personal-email@gmail.com"
+     git config user.name "Rahul Pandey"
+
+
+git pull
+git push
